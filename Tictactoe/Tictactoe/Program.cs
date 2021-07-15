@@ -23,9 +23,9 @@ namespace Tictactoe
 			while(!victory)
 			{
 				Render(); // Renders the screen again after each turn
-				takeTurn(turnOdd); // Has the player take their turn, and calculates what they did
+				TakeTurn(turnOdd); // Has the player take their turn, and calculates what they did
 				turnOdd = !turnOdd; // Changes who's turn it is
-				victory = victoryChecker();
+				victory = VictoryChecker();
 			}
 			Console.WriteLine("Game over!");
 			Console.Read();
@@ -68,7 +68,7 @@ namespace Tictactoe
 		}
 
 		// Processes the player taking a turn
-		static void takeTurn(bool turnOdd)
+		static void TakeTurn(bool turnOdd)
 		{
 			string playerInput = ""; // Tracks player input
 			string playerMark = "X"; // Player's marker for their turn
@@ -130,7 +130,7 @@ namespace Tictactoe
 			}
 		}
 
-		static bool victoryChecker()
+		static bool VictoryChecker()
 		{
 			bool victory = false;
 
