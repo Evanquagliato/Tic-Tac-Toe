@@ -28,6 +28,7 @@ namespace Tictactoe
 				victory = victoryChecker();
 			}
 			Console.WriteLine("Game over!");
+			Console.Read();
 		}
 
 
