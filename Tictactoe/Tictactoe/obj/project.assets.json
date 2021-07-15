@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\evanq\\source\\repos\\Evanquagliato\\Notes\\Tictactoe\\Tictactoe\\Tictactoe.csproj",
+      "projectUniqueName": "C:\\Users\\evanq\\Source\\Repos\\Tic-Tac-Toe\\Tictactoe\\Tictactoe\\Tictactoe.csproj",
       "projectName": "Tictactoe",
-      "projectPath": "C:\\Users\\evanq\\source\\repos\\Evanquagliato\\Notes\\Tictactoe\\Tictactoe\\Tictactoe.csproj",
+      "projectPath": "C:\\Users\\evanq\\Source\\Repos\\Tic-Tac-Toe\\Tictactoe\\Tictactoe\\Tictactoe.csproj",
       "packagesPath": "C:\\Users\\evanq\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\evanq\\source\\repos\\Evanquagliato\\Notes\\Tictactoe\\Tictactoe\\obj\\",
+      "outputPath": "C:\\Users\\evanq\\Source\\Repos\\Tic-Tac-Toe\\Tictactoe\\Tictactoe\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\evanq\\AppData\\Roaming\\NuGet\\NuGet.Config",
