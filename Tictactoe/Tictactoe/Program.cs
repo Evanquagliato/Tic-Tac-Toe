@@ -94,7 +94,7 @@ namespace Tictactoe
 				{
 					playerInput = Console.ReadLine(); // Gets input from the player
 				}
-				catch (Exception)
+				catch
 				{
 					Console.WriteLine("Please enter a value");
 				}
