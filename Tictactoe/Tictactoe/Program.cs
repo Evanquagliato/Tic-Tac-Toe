@@ -101,13 +101,24 @@ namespace Tictactoe
 				
 				int loopCounter = 0; // Creates a new variable to track how many loops the below for loop block does
 				// Ensure numbers only
+				int playerInputInt = 0;
 				try
 				{
-					Int32.Parse(playerInput);
+					// Kyle: Store this so we don't have to parse it twice. Also When we were parsing below, if it threw
+					// an exception it wouldn't be caught but this solves that problem too
+					playerInputInt = Int32.Parse(playerInput);
 				}
-				catch
+				catch 
 				{
 					Console.WriteLine("Please use a number between 1 and 9");
+					// Kyle: Skip the rest of the loop if we didn't get a valid number
+					continue;
+				}
+
+				// Kyle: The above doens't actually check if the number is between 1 and 9 just that it is actaully a number
+				if (playerInputInt < 1 || playerInputInt > 9) {
+					Console.WriteLine("Please use a number between 1 and 9");
+					continue;
 				}
 
 				// Determine where the value is and if it is available
@@ -121,7 +132,7 @@ namespace Tictactoe
 							gridNumbers[i, j] = playerMark;
 							continueGame = true;
 						}
-						else if (loopCounter == Int32.Parse(playerInput)) // if what the player inputted is already used, print this and require a new entry
+						else if (loopCounter == playerInputInt) // if what the player inputted is already used, print this and require a new entry
 						{
 							Console.Write("This box was already picked, please select again! ");
 						}
@@ -132,14 +143,14 @@ namespace Tictactoe
 
 		static bool VictoryChecker()
 		{
-			bool victory = false;
-
 			// Check for victory on rows
 			for (int i = 0; i < gridNumbers.GetLength(0); i++)
 			{
 				if (gridNumbers[0,i] == gridNumbers[1,i] && gridNumbers[2,i] == gridNumbers[1, i])
 				{
-					victory = true;
+					// Kyle: if we know that there's a victory no point in checking the rest of the rows or columns so
+					// we can just return from the whole function early
+					return true;
 				}
 				
 				// Check for victory on columms
@@ -147,7 +158,8 @@ namespace Tictactoe
 				{
 					if (gridNumbers[j, 0] == gridNumbers[j, 1] && gridNumbers[j, 2] == gridNumbers[j, 1])
 					{
-						victory = true;
+						// See above
+						return true;
 					}
 				}
 			}
@@ -155,14 +167,14 @@ namespace Tictactoe
 			// Checks for diagnoal victories
 			if (gridNumbers[0, 0] == gridNumbers[1, 1] && gridNumbers[2, 2] == gridNumbers[1, 1])
 			{
-				victory = true;
+				return true;
 			}
 			if (gridNumbers[0, 2] == gridNumbers[1, 1] && gridNumbers[2, 0] == gridNumbers[1,1])
 			{
-				victory = true;
+				return true;
 			}
 
-			return victory;
+			return false;
 		}
 	}
 }
